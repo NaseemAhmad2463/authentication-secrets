@@ -80,7 +80,7 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new FacebookStrategy({
   clientID: process.env.CLIENT_ID_FB,
   clientSecret: process.env.CLIENT_SECRET_FB,
-  callbackURL: "https://authentication-secrets-bkds5tcjr-naseemgoogl786-gmailcom.vercel.app/auth/facebook/secrets"
+  callbackURL: "https://authentication-secrets.vercel.app/auth/facebook/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
 
