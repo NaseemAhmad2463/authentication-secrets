@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const path = require('path');   //for vercel
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
@@ -11,7 +12,10 @@ const FacebookStrategy = require("passport-facebook").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 const app = express();
 
-app.use(express.static("public"));
+app.set('views', path.join(__dirname, 'views'));   //for Vercel
+
+app.use(express.static(__dirname + "/public"));
+
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -25,7 +29,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-mongoose.connect("mongodb://localhost:27017/userDB");
+mongoose.connect("mongodb+srv://admin-naseem:Test123@cluster0.2qtsvcv.mongodb.net/userDB");
 
 const userSchema = new mongoose.Schema({
   username: String,
