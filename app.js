@@ -63,7 +63,7 @@ passport.deserializeUser(function(user, cb) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/secrets"
+  callbackURL: "https://authentication-secrets-bkds5tcjr-naseemgoogl786-gmailcom.vercel.app/auth/google/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
   
@@ -80,7 +80,7 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new FacebookStrategy({
   clientID: process.env.CLIENT_ID_FB,
   clientSecret: process.env.CLIENT_SECRET_FB,
-  callbackURL: "http://localhost:3000/auth/facebook/secrets"
+  callbackURL: "https://authentication-secrets-bkds5tcjr-naseemgoogl786-gmailcom.vercel.app/auth/facebook/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
 
